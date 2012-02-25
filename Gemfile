@@ -12,7 +12,8 @@ gem 'tinymce-rails'
 gem 'paperclip'
 
 gem 'devise'
-
+gem 'factory_girl'
+gem 'factory_girl_rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -31,15 +32,19 @@ gem 'active_scaffold_vho'
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the web server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 end
+
+gem 'minitest'
+gem 'autotest-rails'
+
