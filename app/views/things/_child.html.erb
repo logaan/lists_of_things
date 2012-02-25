@@ -1,0 +1,10 @@
+<li>
+  <span class="name"><%= child.name %></span>
+
+  <% if child.children.present? %>
+    <ul>
+      <%= render :partial => "child", :collection => child.children %>
+    </ul>
+  <% end %>
+</li>
+
