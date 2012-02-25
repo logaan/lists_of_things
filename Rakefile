@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-AsTemplate2::Application.load_tasks
+ListsOfThings::Application.load_tasks

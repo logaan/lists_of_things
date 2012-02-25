@@ -1,4 +1,4 @@
-AsTemplate2::Application.routes.draw do
+ListsOfThings::Application.routes.draw do
   namespace :admin do
     root :to => "admins#index"
 
