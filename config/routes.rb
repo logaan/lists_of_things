@@ -6,6 +6,14 @@ ListsOfThings::Application.routes.draw do
 
     devise_for :admins, :sign_out_via => [ :get ]
 
+    resources :things do
+      as_routes
+    end
+
+    resources :links do
+      as_routes
+    end
+
     resources :admins do
       as_routes
     end
