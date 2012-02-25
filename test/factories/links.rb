@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :link do
-    parent_id 1
-    child_id 1
+    association :parent, :factory => :thing
+    association :child, :factory => :thing
   end
 end
