@@ -1,4 +1,6 @@
 ListsOfThings::Application.routes.draw do
+  resources :things
+
   namespace :admin do
     root :to => "admins#index"
 
