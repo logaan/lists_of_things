@@ -7,3 +7,6 @@
   one.
 * Throw some depth control on the lists partial.
 
+### Features
+* Add new action
+

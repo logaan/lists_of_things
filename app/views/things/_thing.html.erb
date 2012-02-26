@@ -1,6 +1,18 @@
 <li>
   <span class="name"><%= link_to thing.name, thing %></span>
 
-  <%= render :partial => "things", :object => thing.children %>
+  <% if thing.children.present? %>
+    <ul>
+      <%= render thing.children %>
+
+      <li>
+        <%= form_for Thing.new do |f| %>
+          <%= f.hidden_field :parent_id, :value => thing.id %>
+          <%= f.text_field :name %>
+          <%= f.submit %>
+        <% end %>
+      </li>
+    </ul>
+  <% end %>
 </li>
 
