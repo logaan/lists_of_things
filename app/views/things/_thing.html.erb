@@ -1,5 +1,5 @@
 <li>
-  <span class="name"><%= thing.name %></span>
+  <span class="name"><%= link_to thing.name, thing %></span>
 
   <%= render :partial => "things", :object => thing.children %>
 </li>
