@@ -10,7 +10,13 @@
 
       <%= form_for Thing.new, :html => {:class => "create_child"} do |f| %>
         <%= f.hidden_field :parent_id, :value => thing.id %>
-        <%= f.text_field :name, :placeholder => "Create child" %>
+        <%= f.text_field :name, :placeholder => "Create child",
+                                :class => "link_placeholder" %>
+      <% end %>
+
+      <%= form_tag copy_thing_path(thing), :method => "put" do %>
+        <input type="hidden" class="copy_to_thing_id" name="copy_to_thing_id" />
+        <input class="copy_to_thing_name" placeholder="Copy to..." />
       <% end %>
     </div>
   </div>

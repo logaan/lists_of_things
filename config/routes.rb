@@ -2,7 +2,16 @@ ListsOfThings::Application.routes.draw do
 
   root :to => "things#index"
 
-  resources :things
+  resources :things do
+    collection do
+      get "search"
+    end
+
+    member do
+      put "move"
+      put "copy"
+    end
+  end
 
   namespace :admin do
     root :to => "admins#index"

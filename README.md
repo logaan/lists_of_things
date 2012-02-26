@@ -7,6 +7,13 @@
   one.
 * Throw some depth control on the lists partial.
 
-### Features
-* Add new action
+### Bugs
+
+* Should not be able to copy into a child of yourself.
+* Delete from listing should only remove you from that list.
+
+### Architecture
+
+* Copy to should be a link#create call
+* Delete from listing should be a link#destroy call
 
