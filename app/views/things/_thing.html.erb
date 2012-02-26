@@ -1,24 +1,23 @@
-<li>
+<li class="thing">
 
-  <span class="name"><%= link_to thing.name, thing %></span>
+  <div class="detail">
+    <span class="name"><%= link_to thing.name, thing %></span>
 
-  <%= form_tag thing, :method => "delete", :class => "delete_button" do %>
-    <%= submit_tag "Delete" %>
-  <% end %>
+    <div class="actions">
+      <%= form_tag thing, :method => "delete", :class => "delete_button" do %>
+        <%= submit_tag "Delete" %>
+      <% end %>
+
+      <%= form_for Thing.new, :html => {:class => "create_child"} do |f| %>
+        <%= f.hidden_field :parent_id, :value => thing.id %>
+        <%= f.text_field :name, :placeholder => "Create child" %>
+      <% end %>
+    </div>
+  </div>
 
   <% if thing.children.present? %>
     <ul>
-
       <%= render thing.children %>
-
-      <li>
-        <%= form_for Thing.new do |f| %>
-          <%= f.hidden_field :parent_id, :value => thing.id %>
-          <%= f.text_field :name %>
-          <%= f.submit %>
-        <% end %>
-      </li>
-
     </ul>
   <% end %>
 

@@ -2,6 +2,7 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
-.delete_button {
-  display: inline;
-}
+.thing { line-height: 1.5em; }
+.thing ul { margin: 0; }
+.actions, .actions form { display: inline; }
+
