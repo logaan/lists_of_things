@@ -1,8 +1,14 @@
 <li>
+
   <span class="name"><%= link_to thing.name, thing %></span>
+
+  <%= form_tag thing, :method => "delete", :class => "delete_button" do %>
+    <%= submit_tag "Delete" %>
+  <% end %>
 
   <% if thing.children.present? %>
     <ul>
+
       <%= render thing.children %>
 
       <li>
@@ -12,7 +18,9 @@
           <%= f.submit %>
         <% end %>
       </li>
+
     </ul>
   <% end %>
+
 </li>
 

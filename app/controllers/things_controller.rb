@@ -17,4 +17,9 @@ class ThingsController < ApplicationController
       render "new"
     end
   end
+
+  def destroy
+    Thing.find(params[:id]).destroy
+    redirect_to :back
+  end
 end

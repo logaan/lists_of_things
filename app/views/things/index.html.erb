@@ -2,5 +2,9 @@
 
 <h1>Orphans</h1>
 
-<%= render :partial => "things", :object => @things %>
+<% if @things.present? %>
+  <ul>
+    <%= render @things %>
+  </ul>
+<% end %>
 
