@@ -19,27 +19,27 @@ jQuery(function() {
   });
 
   // Show actions when you roll over things
-  // $(".thing .actions").hide();
+  $(".thing .actions").hide();
 
-  // var allow_hover = true;
+  var allow_hover = true;
 
-  // $(".thing .detail").hover(function(e) {
-  //   if( allow_hover ) {
-  //     $(".actions", this).show();
-  //   }
-  // }, function() {
-  //   if( allow_hover ) {
-  //     $(".actions", this).hide();
-  //   }
-  // });
+  $(".thing .detail").hover(function(e) {
+    if( allow_hover ) {
+      $(".actions", this).show();
+    }
+  }, function() {
+    if( allow_hover ) {
+      $(".actions", this).hide();
+    }
+  });
 
-  // $(".thing .detail input").focus(function() {
-  //   allow_hover = false;
-  // });
+  $(".thing .detail input").focus(function() {
+    allow_hover = false;
+  });
 
-  // $(".thing .actions input").blur(function() {
-  //   allow_hover = true;
-  //   $(this).parents(".actions").hide();
-  // });
+  $(".thing .actions input").blur(function() {
+    allow_hover = true;
+    $(this).parents(".actions").hide();
+  });
 });
 
