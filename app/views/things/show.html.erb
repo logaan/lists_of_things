@@ -21,8 +21,5 @@
   <% end %>
 </div>
 
-<% if @thing.children.present? %>
-  <ul id="children">
-    <%= render :partial => "child", :collection => @thing.children %>
-  </ul>
-<% end %>
+<%= render :partial => "things", :object => @thing.children %>
+

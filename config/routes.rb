@@ -1,4 +1,7 @@
 ListsOfThings::Application.routes.draw do
+
+  root :to => "things#index"
+
   resources :things
 
   namespace :admin do
@@ -18,8 +21,6 @@ ListsOfThings::Application.routes.draw do
       as_routes
     end
   end
-
-  root :to => "admin/admins#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
