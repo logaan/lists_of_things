@@ -3,11 +3,11 @@
 
 jQuery(function() {
   // Auto complete copy and move boxes
-  $(".copy_to_thing_name").autocomplete({
+  $(".parent_name").autocomplete({
     source: "/things/search",
     select: function(event, ui) {
       var form = $(this).parents("form");
-      var id_field = form.find(".copy_to_thing_id");
+      var id_field = form.find(".parent_id");
 
       if( ui.item ) {
         id_field.val(ui.item.id);

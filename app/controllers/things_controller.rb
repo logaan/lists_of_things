@@ -29,12 +29,4 @@ class ThingsController < ApplicationController
     Thing.find(params[:id]).destroy
     redirect_to :back
   end
-
-  def copy
-    thing = Thing.find(params[:id])
-    thing.parents << Thing.find(params[:copy_to_thing_id])
-    thing.save
-
-    redirect_to :back
-  end
 end

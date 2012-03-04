@@ -4,8 +4,11 @@
     <span class="name"><%= link_to thing.name, thing %></span>
 
     <div class="actions">
-      <%= form_tag thing, :method => "delete", :class => "delete_button" do %>
-        <%= submit_tag "Delete" %>
+      <% if defined? parent %>
+        <%= form_for thing.links_to_parents.find_by_parent_id(parent.id),
+                     :method => "delete", :class => "delete_button" do |f| %>
+          <%= submit_tag "Remove from parent" %>
+        <% end %>
       <% end %>
 
       <%= form_for Thing.new, :html => {:class => "create_child"} do |f| %>
@@ -14,16 +17,17 @@
                                 :class => "link_placeholder" %>
       <% end %>
 
-      <%= form_tag copy_thing_path(thing), :method => "put" do %>
-        <input type="hidden" class="copy_to_thing_id" name="copy_to_thing_id" />
-        <input class="copy_to_thing_name" placeholder="Copy to..." />
+      <%= form_for Link.new(:child => thing) do |f| %>
+        <%= f.hidden_field :child_id %>
+        <%= f.hidden_field :parent_id, :class => "parent_id" %>
+        <input class="parent_name" placeholder="Copy to..." />
       <% end %>
     </div>
   </div>
 
   <% if thing.children.present? %>
     <ul>
-      <%= render thing.children %>
+      <%= render thing.children, :parent => thing %>
     </ul>
   <% end %>
 
