@@ -10,7 +10,7 @@
 ### Bugs
 
 * Should not be able to copy into a child of yourself.
-* Delete from listing should only remove you from that list.
+* ~~Delete from listing should only remove you from that list.~~
 
 ### Architecture
 
