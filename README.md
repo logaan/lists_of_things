@@ -14,6 +14,6 @@
 
 ### Architecture
 
-* Copy to should be a link#create call
-* Delete from listing should be a link#destroy call
+* ~~Copy to should be a link#create call~~
+* ~~Delete from listing should be a link#destroy call~~
 
