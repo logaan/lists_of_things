@@ -20,4 +20,15 @@ namespace :fake do
       ]
     )
   end
+
+  desc "Load a hundred thousand deep tree"
+  task :deep => :environment do
+    100.times do |count|
+      puts count
+      FactoryGirl.create(:thing,
+        :name => "Deep thing",
+        :parents => [Thing.last]
+      )
+    end
+  end
 end

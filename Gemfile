@@ -5,7 +5,9 @@ gem 'rails', '3.1.1'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
+# TODO: Redundant?
 gem 'sqlite3'
+gem 'pg'
 
 gem 'active_scaffold'
 gem 'tinymce-rails'
